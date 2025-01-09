@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/trafficdb
+    username: postgres
+    password: 2556b11j
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: seruedev@gmail.com
+    password: cxdaesggvoxbfcjp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+  application:
+    name: traffic-service
+
+application:
+  security:
+    jwt:
+      secret-key: 7bb8a837a7b966f41e37da3a2cebc226b59a63f24034a0ae1674060ac2de0c5ad075b40b7d685ff179dc839270c27923307d67a5c468016f28bfcefa0cc10e9ecf894ed53cc92a45e4e3b22131794db89711f0a5426fe7653e94844a495488bccbe4168364774df7d4a12512d09a3fe9f1bdf8394a4aeecf920d47225c62566d
+      expiration: 86400000
+  mailing:
+    frontend:
+      activation-url: http://localhost:8088/activate-account
+#      activation-url: http://localhost:4200/activate-account
+  file:
+    upload:
+      photos-output-path: ./uploads
+server:
+  port: 8088
